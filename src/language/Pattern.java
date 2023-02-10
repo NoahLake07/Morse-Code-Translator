@@ -18,9 +18,19 @@ public class Pattern implements Symbols, Comparable<Pattern> {
         StringBuffer read = new StringBuffer();
 
         for (int i = 0; i < input.length(); i++) {
-            if(input.charAt(i) != ' '){
-                read.append(input.charAt(i));
-                symbols.add(input.charAt(i));
+            char ch = input.charAt(i);
+            if(ch != ' '){
+
+                if(ch == '-'){
+                    ch = '_';
+                }
+
+                if(ch == '*'){
+                    ch = '.';
+                }
+
+                read.append(ch);
+                symbols.add(ch);
             }
         }
     }
@@ -51,31 +61,11 @@ public class Pattern implements Symbols, Comparable<Pattern> {
     }
 
     public static ArrayList<Pattern> decode(String in){
-        // TODO rewrite to be functional
         ArrayList<Pattern> patterns = new ArrayList<>();
-        for (int i = 0; i < in.length()-1; i++) {
-            StringBuffer morsePattern = new StringBuffer();
-            boolean isSpace = false;
-            while(in.charAt(i)!= ' ' && i < in.length()-1){
 
-                // check to see if a space would be valid in the area
-                if(i<in.length()-2) {
-                    // check to see if there's a space
-                    if (in.charAt(i) == '/' && in.charAt(i + 1) == '/'){
-                        isSpace = true;
-                        morsePattern.append("//");
-                        break;
-                    }
-                }
-                morsePattern.append(in.charAt(i++));
-            }
-
-            if(isSpace){
-                patterns.add(PatternLibrary.SPACE);
-            } else {
-                patterns.add(new Pattern(morsePattern.toString()));
-                patterns.add(PatternLibrary.LETTER_SEPARATOR);
-            }
+        String[] divided = in.split(" ");
+        for (int i = 0; i < divided.length; i++) {
+            patterns.add(new Pattern(divided[i]));
         }
 
         return patterns;

@@ -3,7 +3,6 @@ package datastructures;
 import language.Combinations;
 import language.Pattern;
 
-import java.awt.print.Printable;
 import java.util.ArrayList;
 
 public class PatternLibrary implements Combinations {
@@ -38,7 +37,7 @@ public class PatternLibrary implements Combinations {
         add(Y,'Y');
         add(Z,'Z');
         add(SPACE, ' ');
-        add(LETTER_SEPARATOR, "");
+        add(LETTER_SEPARATOR, " ");
 
     }
 
@@ -75,6 +74,15 @@ public class PatternLibrary implements Combinations {
             }
         }
 
+        return null;
+    }
+
+    public Pattern get(char v){
+        for (int i = 0; i < tree.size(); i++) {
+            if(tree.get(i).value.equals(Character.toUpperCase(v))){
+                return tree.get(i).key;
+            }
+        }
         return null;
     }
 
