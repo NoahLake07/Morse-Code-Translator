@@ -36,6 +36,18 @@ public class PatternLibrary implements Combinations {
         add(X,'X');
         add(Y,'Y');
         add(Z,'Z');
+
+        add(ONE,'1');
+        add(TWO,'2');
+        add(THREE,'3');
+        add(FOUR,'4');
+        add(FIVE,'5');
+        add(SIX,'6');
+        add(SEVEN,'7');
+        add(EIGHT,'8');
+        add(NINE,'9');
+        add(ZERO,'0');
+
         add(SPACE, ' ');
         add(LETTER_SEPARATOR, " ");
 

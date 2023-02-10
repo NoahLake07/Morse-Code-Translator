@@ -33,15 +33,15 @@ public interface Combinations {
     public final static Pattern SPACE = new Pattern("//");
 
     // ALL NUMBERS 0-9
-    public final static Pattern ONE = new Pattern(". _");
-    public final static Pattern TWO = new Pattern(". . _");
-    public final static Pattern THREE = new Pattern(". . . _");
-    public final static Pattern FOUR = new Pattern(". . . . _");
+    public final static Pattern ONE = new Pattern("._");
+    public final static Pattern TWO = new Pattern(".._");
+    public final static Pattern THREE = new Pattern("..._");
+    public final static Pattern FOUR = new Pattern("...._");
     public final static Pattern FIVE = new Pattern(".");
-    public final static Pattern SIX = new Pattern("_ . . . .");
-    public final static Pattern SEVEN = new Pattern("_ . . .");
-    public final static Pattern EIGHT = new Pattern("_ . .");
-    public final static Pattern NINE = new Pattern("_ .");
+    public final static Pattern SIX = new Pattern("_....");
+    public final static Pattern SEVEN = new Pattern("_...");
+    public final static Pattern EIGHT = new Pattern("_..");
+    public final static Pattern NINE = new Pattern("_.");
     public final static Pattern ZERO = new Pattern("_____");
 
 }
